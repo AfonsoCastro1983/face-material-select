@@ -6,11 +6,21 @@ type ProductCardProps = {
   id: number;
   name: string;
   image: string;
+  description: string;
+  price: string;
   selected: boolean;
   onSelect: (id: number) => void;
 };
 
-const ProductCard = ({ id, name, image, selected, onSelect }: ProductCardProps) => {
+const ProductCard = ({ 
+  id, 
+  name, 
+  image, 
+  description, 
+  price, 
+  selected, 
+  onSelect 
+}: ProductCardProps) => {
   return (
     <div
       onClick={() => onSelect(id)}
@@ -43,6 +53,8 @@ const ProductCard = ({ id, name, image, selected, onSelect }: ProductCardProps) 
         )}
       </div>
       <h3 className="text-center text-lg font-medium text-gray-800">{name}</h3>
+      <p className="mt-1 text-center text-sm text-gray-600">{description}</p>
+      <p className="mt-2 text-center text-base font-semibold text-gray-900">{price}</p>
     </div>
   );
 };

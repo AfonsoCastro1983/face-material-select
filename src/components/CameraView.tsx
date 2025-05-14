@@ -86,9 +86,14 @@ const CameraView = () => {
           </button>
         ) : (
           <div className="flex flex-col items-center space-y-8">
-            <p className="text-center text-2xl font-medium">
-              Posicione seu rosto no centro da tela
-            </p>
+            <div className="rounded-md bg-black bg-opacity-75 px-6 py-4 text-center">
+              <p className="mb-2 text-xl font-medium text-white">
+                Posicione seu rosto no centro da tela
+              </p>
+              <p className="text-sm text-white">
+                Movimente sua cabeça lentamente de um lado para o outro para capturarmos as características da sua pele
+              </p>
+            </div>
             {isRecording && (
               <div className="flex flex-col items-center">
                 <div className="mb-2 h-4 w-4 animate-pulse rounded-full bg-red-500"></div>

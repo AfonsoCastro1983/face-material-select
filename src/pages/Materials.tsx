@@ -8,31 +8,43 @@ const products = [
   {
     id: 1,
     name: "Batom Vermelho",
+    description: "Batom matte longa duração",
+    price: "R$ 39,90",
     image: "https://images.unsplash.com/photo-1590156424170-40b16013894e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 2,
     name: "Base Facial",
+    description: "Base líquida com acabamento natural",
+    price: "R$ 79,90",
     image: "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 3,
     name: "Paleta de Sombras",
+    description: "12 cores para múltiplos looks",
+    price: "R$ 65,00",
     image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 4,
     name: "Máscara para Cílios",
+    description: "Volume e alongamento intenso",
+    price: "R$ 45,90",
     image: "https://images.unsplash.com/photo-1631730359585-53727148cb3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 5,
     name: "Creme Facial",
+    description: "Hidratação profunda para pele sensível",
+    price: "R$ 54,90",
     image: "https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 6,
     name: "Perfume",
+    description: "Fragrância floral para o dia todo",
+    price: "R$ 120,00",
     image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   },
 ];
@@ -71,6 +83,8 @@ const Materials = () => {
               id={product.id}
               name={product.name}
               image={product.image}
+              description={product.description}
+              price={product.price}
               selected={selectedProducts.includes(product.id)}
               onSelect={handleSelectProduct}
             />
