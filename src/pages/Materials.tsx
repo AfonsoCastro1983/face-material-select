@@ -2,6 +2,13 @@
 import React, { useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import { useNavigate } from "react-router-dom";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 // Sample product data
 const products = [
@@ -76,19 +83,34 @@ const Materials = () => {
           Clique nos produtos que deseja selecionar
         </p>
 
-        <div className="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              id={product.id}
-              name={product.name}
-              image={product.image}
-              description={product.description}
-              price={product.price}
-              selected={selectedProducts.includes(product.id)}
-              onSelect={handleSelectProduct}
-            />
-          ))}
+        <div className="mb-12 px-8">
+          <Carousel
+            opts={{
+              align: "center",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {products.map((product) => (
+                <CarouselItem key={product.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <ProductCard
+                    id={product.id}
+                    name={product.name}
+                    image={product.image}
+                    description={product.description}
+                    price={product.price}
+                    selected={selectedProducts.includes(product.id)}
+                    onSelect={handleSelectProduct}
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="mt-6">
+              <CarouselPrevious className="left-4 border-gray-300 hover:bg-[#1EAEDB] hover:text-white" />
+              <CarouselNext className="right-4 border-gray-300 hover:bg-[#1EAEDB] hover:text-white" />
+            </div>
+          </Carousel>
         </div>
 
         <div className="flex justify-center space-x-4">
